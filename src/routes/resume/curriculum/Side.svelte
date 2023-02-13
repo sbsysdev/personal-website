@@ -56,18 +56,18 @@
                 {
                     icon: mdiReact,
                     text: 'React.js',
-                    percentage: 98,
+                    percentage: 95,
                 },
                 {
                     icon: '',
                     img: '/imgs/sveltekit.svg',
                     text: 'SvelteKit',
-                    percentage: 90,
+                    percentage: 85,
                 },
                 {
                     icon: mdiSass,
                     text: 'SASS',
-                    percentage: 98,
+                    percentage: 95,
                 },
             ],
         },
@@ -88,17 +88,17 @@
                 {
                     icon: mdiNodejs,
                     text: 'Node.js',
-                    percentage: 80,
+                    percentage: 75,
                 },
                 {
                     icon: mdiLanguageTypescript,
                     text: 'TypeScript',
-                    percentage: 98,
+                    percentage: 95,
                 },
                 {
                     icon: mdiLanguageGo,
                     text: 'Golang',
-                    percentage: 40,
+                    percentage: 30,
                 },
             ],
         },
@@ -108,7 +108,7 @@
                 {
                     icon: mdiGit,
                     text: 'Git(hub|lab)',
-                    percentage: 70,
+                    percentage: 60,
                 },
             ],
         },
@@ -145,7 +145,7 @@
     }
 
     .avatar {
-        @include margin(x xl);
+        @include margin(x 2xl element);
         max-width: 100%;
     }
 

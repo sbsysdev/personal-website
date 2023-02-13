@@ -160,7 +160,7 @@
 
                 & > span {
                     @include bg-color(20);
-                    @include height(xs, element);
+                    @include height(sm, split);
                     @include rounded(all xs);
                     overflow: hidden;
                     position: relative;

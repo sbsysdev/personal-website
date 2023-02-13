@@ -138,10 +138,6 @@
         }
     }
 
-    .list-title {
-        @include font-weight(60);
-    }
-
     .list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
