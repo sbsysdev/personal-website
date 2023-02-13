@@ -21,10 +21,10 @@ export interface WorkExperience {
     end: string;
     reference: string;
     text: string | string[];
-    list: SideArticleListItem[];
+    list: SideArticleGraphItem[];
 }
 
 export interface SectionListItem {
     title: string;
-    text: string | string[] | WorkExperience;
+    content: string | string[] | WorkExperience[];
 }
