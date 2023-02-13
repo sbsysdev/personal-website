@@ -1,0 +1,145 @@
+@use 'sass:list';
+
+@function size($size-key, $size-type-key: space) {
+    @return var(--#{$prefix}-size-#{$size-type-key}-#{$size-key});
+}
+
+@mixin width($size-key, $size-type-key: space) {
+    width: size($size-key, $size-type-key);
+}
+
+@mixin max-width($size-key, $size-type-key: space) {
+    max-width: size($size-key, $size-type-key);
+}
+
+@mixin min-width($size-key, $size-type-key: space) {
+    min-width: size($size-key, $size-type-key);
+}
+
+@mixin height($size-key, $size-type-key: space) {
+    height: size($size-key, $size-type-key);
+}
+
+@mixin max-height($size-key, $size-type-key: space) {
+    max-height: size($size-key, $size-type-key);
+}
+
+@mixin min-height($size-key, $size-type-key: space) {
+    min-height: size($size-key, $size-type-key);
+}
+
+@mixin border-width($positions...) {
+    @each $position-key, $size-key, $size-type-key in $positions {
+        @if not $size-type-key {
+            $size-type-key: border;
+        }
+
+        @if $position-key == y or $position-key == top or $position-key == all {
+            border-top-width: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == y or $position-key == bottom or $position-key == all {
+            border-bottom-width: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == x or $position-key == left or $position-key == all {
+            border-left-width: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == x or $position-key == right or $position-key == all {
+            border-right-width: size($size-key, $size-type-key);
+        }
+    }
+}
+
+@mixin margin($positions...) {
+    @each $position-key, $size-key, $size-type-key in $positions {
+        @if not $size-type-key {
+            $size-type-key: space;
+        }
+
+        @if $position-key == y or $position-key == top or $position-key == all {
+            margin-top: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == y or $position-key == bottom or $position-key == all {
+            margin-bottom: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == x or $position-key == left or $position-key == all {
+            margin-left: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == x or $position-key == right or $position-key == all {
+            margin-right: size($size-key, $size-type-key);
+        }
+    }
+}
+
+@mixin padding($positions...) {
+    @each $position-key, $size-key, $size-type-key in $positions {
+        @if not $size-type-key {
+            $size-type-key: space;
+        }
+
+        @if $position-key == y or $position-key == top or $position-key == all {
+            padding-top: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == y or $position-key == bottom or $position-key == all {
+            padding-bottom: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == x or $position-key == left or $position-key == all {
+            padding-left: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == x or $position-key == right or $position-key == all {
+            padding-right: size($size-key, $size-type-key);
+        }
+    }
+}
+
+@mixin rounded($positions...) {
+    @each $position-key, $size-key, $size-type-key in $positions {
+        @if not $size-type-key {
+            $size-type-key: rounded;
+        }
+
+        @if $position-key == top or $position-key == left or $position-key == top-left or $position-key == all {
+            border-top-left-radius: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == top or $position-key == right or $position-key == top-right or $position-key == all {
+            border-top-right-radius: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == bottom or $position-key == left or $position-key == bottom-left or $position-key == all {
+            border-bottom-left-radius: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == bottom or $position-key == right or $position-key == bottom-right or $position-key == all {
+            border-bottom-right-radius: size($size-key, $size-type-key);
+        }
+    }
+}
+
+@mixin gap($positions...) {
+    @each $position-key, $size-key, $size-type-key in $positions {
+        @if not $size-type-key {
+            $size-type-key: space;
+        }
+
+        @if $position-key == all {
+            gap: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == x {
+            column-gap: size($size-key, $size-type-key);
+        }
+
+        @if $position-key == y {
+            row-gap: size($size-key, $size-type-key);
+        }
+    }
+}

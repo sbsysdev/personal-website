@@ -1,0 +1,7 @@
+@function opacity($opacity-key) {
+    @return var(--#{$prefix}-opacity-#{$opacity-key});
+}
+
+@mixin opacity($opacity-key) {
+    opacity: opacity($opacity-key);
+}

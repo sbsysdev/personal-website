@@ -1,0 +1,101 @@
+@use 'sass:list';
+
+@mixin shadow($positions...) {
+    $shadow: none;
+
+    @each $position-key, $size-key, $inset in $positions {
+        @if $position-key == top or $position-key == left or $position-key == top-left or $position-key == all {
+            $top-left-shadow: var(--#{$prefix}-shadow-top-left-#{$size-key})
+                rgb(var(--#{$prefix}-shadow-top-left-color) / var(--#{$prefix}-shadow-top-left-opacity))
+                $inset;
+
+            @if $shadow == none {
+                $shadow: $top-left-shadow;
+            } @else {
+                $shadow: $shadow, $top-left-shadow;
+            }
+        }
+
+        @if $position-key == top or $position-key == right or $position-key == top-right or $position-key == all {
+            $top-right-shadow: var(--#{$prefix}-shadow-top-right-#{$size-key})
+                rgb(var(--#{$prefix}-shadow-top-right-color) / var(--#{$prefix}-shadow-top-right-opacity))
+                $inset;
+
+            @if $shadow == none {
+                $shadow: $top-right-shadow;
+            } @else {
+                $shadow: $shadow, $top-right-shadow;
+            }
+        }
+
+        @if $position-key == bottom or $position-key == left or $position-key == bottom-left or $position-key == all {
+            $bottom-left-shadow: var(--#{$prefix}-shadow-bottom-left-#{$size-key})
+                rgb(var(--#{$prefix}-shadow-bottom-left-color) / var(--#{$prefix}-shadow-bottom-left-opacity))
+                $inset;
+
+            @if $shadow == none {
+                $shadow: $bottom-left-shadow;
+            } @else {
+                $shadow: $shadow, $bottom-left-shadow;
+            }
+        }
+
+        @if $position-key == bottom or $position-key == right or $position-key == bottom-right or $position-key == all {
+            $bottom-right-shadow: var(--#{$prefix}-shadow-bottom-right-#{$size-key})
+                rgb(var(--#{$prefix}-shadow-bottom-right-color) / var(--#{$prefix}-shadow-bottom-right-opacity))
+                $inset;
+
+            @if $shadow == none {
+                $shadow: $bottom-right-shadow;
+            } @else {
+                $shadow: $shadow, $bottom-right-shadow;
+            }
+        }
+    }
+
+    box-shadow: $shadow;
+}
+
+@mixin shadow-color($positions...) {
+    @each $position-key, $intensity-key, $serie-key in $positions {
+        @if $serie-key == null {
+            $serie-key: neutral;
+        }
+
+        @if $position-key == top or $position-key == left or $position-key == top-left or $position-key == all {
+            --#{$prefix}-shadow-top-left-color: #{palette($intensity-key, $serie-key)};
+        }
+
+        @if $position-key == top or $position-key == right or $position-key == top-right or $position-key == all {
+            --#{$prefix}-shadow-top-right-color: #{palette($intensity-key, $serie-key)};
+        }
+
+        @if $position-key == bottom or $position-key == left or $position-key == bottom-left or $position-key == all {
+            --#{$prefix}-shadow-bottom-left-color: #{palette($intensity-key, $serie-key)};
+        }
+
+        @if $position-key == bottom or $position-key == right or $position-key == bottom-right or $position-key == all {
+            --#{$prefix}-shadow-bottom-right-color: #{palette($intensity-key, $serie-key)};
+        }
+    }
+}
+
+@mixin shadow-opacity($positions...) {
+    @each $position-key, $opacity-key in $positions {
+        @if $position-key == top or $position-key == left or $position-key == top-left or $position-key == all {
+            --#{$prefix}-shadow-top-left-opacity: #{opacity($opacity-key)};
+        }
+
+        @if $position-key == top or $position-key == right or $position-key == top-right or $position-key == all {
+            --#{$prefix}-shadow-top-right-opacity: #{opacity($opacity-key)};
+        }
+
+        @if $position-key == bottom or $position-key == left or $position-key == bottom-left or $position-key == all {
+            --#{$prefix}-shadow-bottom-left-opacity: #{opacity($opacity-key)};
+        }
+
+        @if $position-key == bottom or $position-key == right or $position-key == bottom-right or $position-key == all {
+            --#{$prefix}-shadow-bottom-right-opacity: #{opacity($opacity-key)};
+        }
+    }
+}

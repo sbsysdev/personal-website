@@ -1,0 +1,105 @@
+@use 'sass:map';
+
+@mixin generate-theme($theme) {
+    // palette
+    @if (map.has-key($theme, palette)) {
+        @each $palette-type, $palette-intensities in map.get($theme, palette) {
+            @each $intensity-key, $intensity-value in $palette-intensities {
+                --#{$prefix}-palette-#{$palette-type}-#{$intensity-key}: #{red($intensity-value)}
+                    #{green($intensity-value)}
+                    #{blue($intensity-value)};
+            }
+        }
+    }
+
+    // font families
+    @if (map.has-key($theme, ff)) {
+        @each $ff-key, $ff-value in map.get($theme, ff) {
+            --#{$prefix}-ff-#{$ff-key}: #{$ff-value};
+        }
+    }
+
+    // font weights
+    @if (map.has-key($theme, fw)) {
+        @each $weight-key, $weight-value in map.get($theme, fw) {
+            --#{$prefix}-fw-#{$weight-key}: #{$weight-value};
+        }
+    }
+
+    // sizes
+    @if (map.has-key($theme, sizes)) {
+        @each $size-type, $size-values in map.get($theme, sizes) {
+            @each $size-key, $size-value in $size-values {
+                --#{$prefix}-size-#{$size-type}-#{$size-key}: #{$size-value};
+            }
+        }
+    }
+
+    // shadows
+    @if (map.has-key($theme, shadows)) {
+        $corner-position-keys: top-left, top-right, bottom-left, bottom-right;
+
+        @each $corner-position-key in $corner-position-keys {
+            @each $size-key, $size-value in map.get($theme, shadows, offset) {
+                $current-offset: map.get($theme, shadows, offset, $size-key);
+                $current-blur: map.get($theme, shadows, blur, $size-key);
+                $current-spread: map.get($theme, shadows, spread, $size-key);
+
+                $h-offset: 0;
+                $v-offset: 0;
+
+                @if $current-offset != 0 {
+                    $h-offset: #{$current-offset}px;
+                    $v-offset: #{$current-offset}px;
+
+                    @if $corner-position-key == top-left {
+                        $h-offset: -#{$current-offset}px;
+                        $v-offset: -#{$current-offset}px;
+                    }
+
+                    @if $corner-position-key == top-right {
+                        $v-offset: -#{$current-offset}px;
+                    }
+
+                    @if $corner-position-key == bottom-left {
+                        $h-offset: -#{$current-offset}px;
+                    }
+                }
+
+                $blur: 0;
+
+                @if $current-blur != 0 {
+                    $blur: #{$current-blur}px;
+                }
+
+                $spread: 0;
+
+                @if $current-spread != 0 {
+                    $spread: #{$current-spread}px;
+                }
+
+                --#{$prefix}-shadow-#{$corner-position-key}-#{$size-key}: #{$h-offset} #{$v-offset} #{$blur} #{$spread};
+            }
+
+            --#{$prefix}-shadow-#{$corner-position-key}-color: 0 0 0;
+
+            --#{$prefix}-shadow-#{$corner-position-key}-opacity: 0.05;
+        }
+    }
+
+    // opacities
+    @if (map.has-key($theme, opacities)) {
+        @each $opacity-key, $opacity-value in map.get($theme, opacities) {
+            --#{$prefix}-opacity-#{$opacity-key}: #{$opacity-value};
+        }
+
+        --#{$prefix}-opacity-bg: 1;
+        --#{$prefix}-opacity-font: 1;
+        --#{$prefix}-opacity-stroke: 1;
+        --#{$prefix}-opacity-fill: 1;
+        --#{$prefix}-opacity-border-top: 1;
+        --#{$prefix}-opacity-border-bottom: 1;
+        --#{$prefix}-opacity-border-left: 1;
+        --#{$prefix}-opacity-border-right: 1;
+    }
+}

@@ -1,0 +1,29 @@
+@use 'sass:list';
+
+@mixin theme($theme-key, $global: true) {
+    @if not list.index($theme-keys, $theme-key) {
+        @error "No media theme #{$theme-key}";
+    }
+
+    @if $global {
+        :global(.theme--#{$theme-key}) & {
+            @content;
+        }
+    } @else {
+        .theme--#{$theme-key} & {
+            @content;
+        }
+    }
+}
+
+@mixin dark {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}
+
+@mixin light {
+    @media (prefers-color-scheme: light) {
+        @content;
+    }
+}

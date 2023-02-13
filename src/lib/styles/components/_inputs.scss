@@ -1,0 +1,93 @@
+@mixin outline-input($palette: neutral, $palette-error: neutral) {
+    & > :global(.field) {
+        & > :global(.input) {
+            @include border-color(all 40);
+            @include border-width(all xs);
+            @include rounded(all xs);
+            @include bg-color(l10);
+            transition: all 0.125s ease-in-out;
+
+            & > :global([slot='before']),
+            & > :global([slot='after']) {
+                @include font-color(40);
+            }
+
+            &:focus-within {
+                @include border-color(all 80, $palette);
+
+                & > :global([slot='before']),
+                & > :global([slot='after']) {
+                    @include font-color(80, $palette);
+                }
+            }
+
+            & > :global([slot='input']) {
+                @include padding(x xs, y sm split);
+            }
+
+            @include theme(dark) {
+                @include bg-color(d10);
+                @include border-color(all 80, $palette);
+
+                & > :global([slot='before']),
+                & > :global([slot='after']) {
+                    @include font-color(80, $palette);
+                }
+
+                &:focus-within {
+                    @include border-color(all 40, $palette);
+
+                    & > :global([slot='before']),
+                    & > :global([slot='after']) {
+                        @include font-color(40, $palette);
+                    }
+                }
+            }
+        }
+
+        & > :global([slot='title']),
+        & > :global([slot='hint']) {
+            @include dots;
+            @include font-size(sm);
+            @include padding(x xs);
+        }
+    }
+
+    & > :global(.field[data-has-error='true']) {
+        & > :global(.input) {
+            @include border-color(all 40, $palette-error);
+
+            & > :global([slot='before']),
+            & > :global([slot='after']) {
+                @include font-color(40, $palette-error);
+            }
+
+            &:focus-within {
+                @include border-color(all 80, $palette-error);
+
+                & > :global([slot='before']),
+                & > :global([slot='after']) {
+                    @include font-color(80, $palette-error);
+                }
+            }
+
+            @include theme(dark) {
+                @include border-color(all 80, $palette-error);
+
+                & > :global([slot='before']),
+                & > :global([slot='after']) {
+                    @include font-color(80, $palette-error);
+                }
+
+                &:focus-within {
+                    @include border-color(all 40, $palette-error);
+
+                    & > :global([slot='before']),
+                    & > :global([slot='after']) {
+                        @include font-color(40, $palette-error);
+                    }
+                }
+            }
+        }
+    }
+}

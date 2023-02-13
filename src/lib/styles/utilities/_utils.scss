@@ -1,0 +1,61 @@
+@mixin disabled {
+    pointer-events: none;
+    user-select: none;
+}
+@mixin enabled {
+    pointer-events: unset;
+    user-select: unset;
+}
+
+@mixin interactable($time: 0.125s, $hover: 1.02, $active: 0.98) {
+    cursor: pointer;
+    transition: all #{$time} ease-in-out;
+
+    &:hover {
+        transform: scale(#{$hover});
+    }
+
+    &:active {
+        transform: scale(#{$active});
+    }
+}
+@mixin bg-interactable($intensity-key, $serie-key: neutral, $base: 0, $hover: 10, $active: 20) {
+    @include bg-color($intensity-key, $serie-key);
+    @include bg-opacity($base);
+
+    &:hover {
+        @include bg-opacity($hover);
+    }
+
+    &:active {
+        @include bg-opacity($active);
+    }
+}
+
+@mixin inset($position: absolute, $size-key: none, $size-type-key: space) {
+    bottom: size($size-key, $size-type-key);
+    left: size($size-key, $size-type-key);
+    position: $position;
+    right: size($size-key, $size-type-key);
+    top: size($size-key, $size-type-key);
+}
+
+@mixin flex($direction: column, $alignment: none, $justify: none) {
+    display: flex;
+
+    flex-direction: $direction;
+
+    @if $alignment != none {
+        align-items: $alignment;
+    }
+
+    @if $justify != none {
+        justify-content: $justify;
+    }
+}
+
+@mixin dots {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

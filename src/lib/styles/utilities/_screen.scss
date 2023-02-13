@@ -1,0 +1,25 @@
+@use 'sass:map';
+
+@mixin screen-width($break-point-key) {
+    @media only screen and (min-width: #{map.get($break-points, $break-point-key)}px) {
+        @content;
+    }
+}
+
+@mixin screen-height($break-point-key) {
+    @media only screen and (min-height: #{map.get($break-points, $break-point-key)}px) {
+        @content;
+    }
+}
+
+@mixin element-min-width($break-point-key) {
+    &[min-width*='-#{$break-point-key}-'] {
+        @content;
+    }
+}
+
+@mixin element-min-height($break-point-key) {
+    &[min-height*='-#{$break-point-key}-'] {
+        @content;
+    }
+}

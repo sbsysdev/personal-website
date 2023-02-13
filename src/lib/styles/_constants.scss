@@ -1,0 +1,26 @@
+@use 'sass:list';
+
+/* prefix */
+$prefix: sbsys;
+
+// break point in pxs
+$break-points: (
+    6xs: 320,
+    5xs: 384,
+    4xs: 448,
+    3xs: 512,
+    2xs: 576,
+    xs: 640,
+    sm: 704,
+    md: 768,
+    lg: 896,
+    xl: 1024,
+    2xl: 1152,
+    3xl: 1280,
+    4xl: 1408,
+    5xl: 1536,
+    6xl: 1664,
+);
+
+// allowed themes
+$theme-keys: (light, dark);

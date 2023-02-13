@@ -1,0 +1,15 @@
+@mixin normalize {
+    &,
+    &::before,
+    &::after {
+        @include border-width(all none);
+        @include margin(all none);
+        @include padding(all none);
+        background-color: transparent;
+        border-style: solid;
+        color: inherit;
+        cursor: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+}

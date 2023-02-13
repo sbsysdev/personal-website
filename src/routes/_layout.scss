@@ -1,0 +1,58 @@
+@import 'modern-normalize/modern-normalize.css';
+@import '$lib/styles';
+
+:root {
+    @include generate-theme($base-theme);
+}
+:root {
+    --sbsys-avatar-fill-color: #445eb4;
+}
+
+* {
+    @include normalize;
+}
+
+body {
+    height: 100vh;
+    margin: inherit;
+    padding: inherit;
+}
+
+body,
+#app {
+    @include flex;
+}
+
+#app {
+    @include bg-color(l30);
+    @include font-color(d10);
+    @include font-family;
+    @include font-size(16, text);
+    @include line-height(sm);
+    flex-grow: 1;
+
+    @include theme(dark, false) {
+        @include bg-color(d30);
+        @include font-color(l30);
+    }
+}
+
+input,
+select,
+button,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus {
+        outline-offset: 2px;
+        outline: 2px solid transparent;
+    }
+}
+
+i {
+    @include flex(column, center, center);
+}
+
+.material-icons {
+    font-size: inherit;
+}

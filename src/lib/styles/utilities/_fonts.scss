@@ -1,0 +1,17 @@
+@use 'sass:list';
+
+@mixin font-family($font-family-key: main) {
+    font-family: var(--#{$prefix}-ff-#{$font-family-key});
+}
+
+@mixin font-weight($size-key) {
+    font-weight: var(--#{$prefix}-fw-#{$size-key});
+}
+
+@mixin font-size($size-key, $size-type-key: font) {
+    font-size: size($size-key, $size-type-key);
+}
+
+@mixin line-height($size-key, $size-type-key: line) {
+    line-height: size($size-key, $size-type-key);
+}
