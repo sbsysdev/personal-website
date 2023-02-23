@@ -14,8 +14,8 @@
         {
             title: 'About me',
             content: [
-                'Systems engineer with extensive experience in web development from the user side, taking care of the user experience, responsive web design and software development life cycle.',
-                'Now starting a new path learning Flutter and Golang.',
+                'Systems engineer with extensive experience (+3 years) in web development from the user side, taking care of the user experience, responsive web design and software development life cycle.',
+                'Now starting a new path learning English, Flutter and Golang.',
             ],
         },
         {

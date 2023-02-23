@@ -4,6 +4,7 @@
     import {
         mdiAccountGroupOutline,
         mdiAccountTieVoiceOutline,
+        mdiDocker,
         mdiEmailOutline,
         mdiGit,
         mdiHeadCogOutline,
@@ -47,6 +48,11 @@
             icon: mdiAccountTieVoiceOutline,
             text: 'Assertive communication',
         },
+        {
+            icon: '',
+            text: 'English A2',
+            img: '/imgs/en.svg',
+        },
     ];
 
     const technicalSkills: SideArticleGraphGroup[] = [
@@ -62,7 +68,7 @@
                     icon: '',
                     img: '/imgs/sveltekit.svg',
                     text: 'SvelteKit',
-                    percentage: 85,
+                    percentage: 75,
                 },
                 {
                     icon: mdiSass,
@@ -78,7 +84,7 @@
                     icon: '',
                     img: '/imgs/flutter.svg',
                     text: 'Flutter',
-                    percentage: 40,
+                    percentage: 30,
                 },
             ],
         },
@@ -91,14 +97,9 @@
                     percentage: 75,
                 },
                 {
-                    icon: mdiLanguageTypescript,
-                    text: 'TypeScript',
-                    percentage: 95,
-                },
-                {
                     icon: mdiLanguageGo,
                     text: 'Golang',
-                    percentage: 30,
+                    percentage: 20,
                 },
             ],
         },
@@ -106,9 +107,19 @@
             title: 'Others',
             graphs: [
                 {
+                    icon: mdiLanguageTypescript,
+                    text: 'TypeScript',
+                    percentage: 95,
+                },
+                {
                     icon: mdiGit,
                     text: 'Git(hub|lab)',
                     percentage: 60,
+                },
+                {
+                    icon: mdiDocker,
+                    text: 'Docker compose',
+                    percentage: 50,
                 },
             ],
         },
@@ -139,7 +150,7 @@
     .side {
         @include bg-color(10);
         @include flex;
-        @include gap(all xl);
+        @include gap(all 2xl);
         @include padding(x md, y lg);
         overflow: hidden;
     }
@@ -151,7 +162,7 @@
 
     .articles {
         @include flex;
-        @include gap(all xl);
+        @include gap(all lg);
 
         & > li {
             @include flex;

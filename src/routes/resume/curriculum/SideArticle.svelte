@@ -18,9 +18,15 @@
         <ul class="list">
             {#each list as item}
                 <li>
-                    <i>
-                        <Icon path={item.icon} />
-                    </i>
+                    {#if item.img !== undefined}
+                        <img src={item.img} alt={item.text} />
+                    {/if}
+
+                    {#if item.img === undefined}
+                        <i>
+                            <Icon path={item.icon} />
+                        </i>
+                    {/if}
 
                     <a href={item.redirect} target="_blank" rel="noreferrer">{item.text}</a>
                 </li>
@@ -95,6 +101,10 @@
             @include gap(all sm);
             list-style: none;
 
+            & > img {
+                @include width(md, element);
+            }
+
             & > i {
                 @include font-color(50, primary);
                 @include font-size(2xl);
@@ -130,7 +140,7 @@
 
     .group {
         @include flex;
-        @include gap(all xs);
+        @include gap(all sm);
 
         & > li {
             @include flex(row, center);
@@ -138,12 +148,12 @@
             list-style: none;
 
             & > img {
-                @include width(lg, element);
+                @include width(md, element);
             }
 
             & > i {
                 @include font-color(50, primary);
-                @include font-size(lg, element);
+                @include font-size(md, element);
             }
 
             & > div {
