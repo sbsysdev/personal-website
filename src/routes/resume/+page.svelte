@@ -29,13 +29,13 @@
 
         overflow: hidden;
     }
-    :global(.page) {
+    /* :global(.page) {
         @include shadow(all xs);
 
         @include theme(dark) {
             @include shadow-color(all l10);
         }
-    }
+    } */
     :global(.page) {
         @include bg-color(l10);
         @include font-color(d10);
