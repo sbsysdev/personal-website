@@ -148,7 +148,7 @@
     @import '$lib/styles';
 
     .side {
-        @include bg-color(10);
+        @include bg-color(l30);
         @include flex;
         @include gap(all 2xl);
         @include padding(x md, y lg);
