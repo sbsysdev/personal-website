@@ -7,6 +7,7 @@
         mdiDocker,
         mdiEmailOutline,
         mdiGit,
+        mdiGithub,
         mdiHeadCogOutline,
         mdiLanguageGo,
         mdiLanguageTypescript,
@@ -32,6 +33,11 @@
             icon: mdiLinkedin,
             text: 'in/steven-bustillo-85b4ba23b',
             redirect: 'https://www.linkedin.com/in/steven-bustillo-85b4ba23b/',
+        },
+        {
+            icon: mdiGithub,
+            text: 'sbsysdev',
+            redirect: 'https://github.com/sbsysdev',
         },
     ];
 
@@ -157,6 +163,7 @@
 
     .avatar {
         @include margin(x 2xl element);
+        @include padding(x md);
         max-width: 100%;
     }
 
