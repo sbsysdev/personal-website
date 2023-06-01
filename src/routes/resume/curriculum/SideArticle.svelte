@@ -86,7 +86,7 @@
 
         & > h3 {
             @include font-color(50, secondary);
-            @include font-size(lg);
+            //@include font-size(lg);
             @include font-weight(60);
             text-align: center;
         }

@@ -32,7 +32,7 @@
                         </header>
 
                         <section class="references">
-                            <span>From {contentItem.start} to {contentItem.end}</span>
+                            <span>De {contentItem.start} a {contentItem.end}</span>
 
                             <span> {contentItem.reference}</span>
                         </section>
@@ -48,7 +48,7 @@
                         {/if}
 
                         {#if contentItem.list.length > 0}
-                            <p class="list-title">Work with (time using):</p>
+                            <p class="list-title">Trabajé con (tiempo usando):</p>
 
                             <ul class="list">
                                 {#each contentItem.list as item}

@@ -1,5 +1,6 @@
 <script lang="ts">
     import {
+        mdiAngular,
         mdiLanguageJava,
         mdiLanguageTypescript,
         mdiNodejs,
@@ -12,24 +13,24 @@
 
     const sections: SectionListItem[] = [
         {
-            title: 'About me',
+            title: 'Acerca de mí',
             content: [
-                'Systems engineer with extensive experience (+3 years) in web development from the user side, taking care of the user experience, responsive web design and software development life cycle.',
-                'Now starting a new path learning English, Flutter and Golang.',
+                'Ingeniero de sistemas con amplia experiencia (+3 años) en desarrollo web desde el lado del usuario, cuidando la experiencia del usuario, el diseño web responsivo y el ciclo de vida del desarrollo de software.',
+                'Ahora iniciando un nuevo camino aprendiendo inglés, Flutter y Golang.',
             ],
         },
         {
-            title: 'Work experience',
+            title: 'Experiencia laboral',
             content: [
                 {
-                    title: 'Programming Analyst',
+                    title: 'Analista Programador',
                     place: 'Se Empeña',
-                    start: 'Jun 2022',
-                    end: 'Dec 2022',
-                    reference: 'A. Alejandro Gonzalez - Team leader - +505-7535-5967',
+                    start: 'junio 2022',
+                    end: 'diciembre 2022',
+                    reference: 'A. Alejandro Gonzalez - Líder del equipo - +505-7535-5967',
                     text: [
-                        'I worked on the migration from a desktop system to web technologies. I supported the design of a module for internal chat implementing clean code on the backend.',
-                        'I worked on the design and implementation of a restaurant order management system.',
+                        'Trabajé en la migración de un sistema de escritorio a tecnologías web. Apoyé en el diseño de un módulo para chat interno implementando código limpio en el backend.',
+                        'Trabajé en el diseño e implementación de un sistema de gestión de pedidos a restaurantes.',
                     ],
                     list: [
                         {
@@ -45,33 +46,33 @@
                         {
                             icon: mdiSass,
                             text: 'SASS',
-                            percentage: 80,
+                            percentage: 90,
                         },
                         {
                             icon: mdiTailwind,
                             text: 'Tailwindcss',
-                            percentage: 20,
+                            percentage: 50,
                         },
                         {
                             icon: mdiNodejs,
                             text: 'Node.js',
-                            percentage: 20,
+                            percentage: 40,
                         },
                         {
                             img: '/imgs/postgresql.svg',
                             icon: '',
                             text: 'PostgreSQL',
-                            percentage: 20,
+                            percentage: 40,
                         },
                     ],
                 },
                 {
-                    title: 'Lead frontend developer',
+                    title: 'Desarrollador principal front-end',
                     place: 'Telo Group Inc.',
-                    start: 'Nov 2021',
-                    end: 'Jun 2022',
-                    reference: 'A. Alejandro Gonzalez - Team leader - +505-7535-5967',
-                    text: "In charge of developing the user interfaces designed by UI/UX and keeping track of development team's tasks (7 people). Always aware of the process and product development's status.",
+                    start: 'noviembre 2021',
+                    end: 'junio 2022',
+                    reference: 'A. Alejandro Gonzalez - Líder del equipo - +505-7535-5967',
+                    text: 'A cargo de desarrollar las interfaces de usuario diseñadas por UI/UX y realizar un seguimiento de las tareas del equipo de desarrollo (7 personas). Siempre al tanto de los procesos y el estado del producto en desarrollo.',
                     list: [
                         {
                             icon: mdiReact,
@@ -86,22 +87,27 @@
                         {
                             icon: mdiNodejs,
                             text: 'Node.js',
-                            percentage: 10,
+                            percentage: 20,
                         },
                     ],
                 },
                 {
-                    title: 'Full-stack developer',
+                    title: 'Desarrollador full-stack',
                     place: 'EpicTech - DigitalReef',
-                    start: 'Sep 2021',
-                    end: 'Nov 2021',
-                    reference: 'Erich Gonzalez - Team leader - +505-8649-7351',
-                    text: 'In charge of developing the user interfaces designed by UI/UX.',
+                    start: 'septiembre 2021',
+                    end: 'noviembre 2021',
+                    reference: 'Erich Gonzalez - Líder del equipo - +505-8649-7351',
+                    text: 'A cargo de desarrollar las interfaces de usuario diseñadas por UI/UX.',
                     list: [
                         {
                             icon: mdiReact,
                             text: 'React.js',
                             percentage: 100,
+                        },
+                        {
+                            icon: mdiAngular,
+                            text: 'Angular',
+                            percentage: 50,
                         },
                         {
                             icon: mdiLanguageTypescript,
@@ -116,7 +122,7 @@
                         {
                             icon: mdiLanguageJava,
                             text: 'JAVA',
-                            percentage: 5,
+                            percentage: 15,
                         },
                     ],
                 },

@@ -4,6 +4,7 @@
     import {
         mdiAccountGroupOutline,
         mdiAccountTieVoiceOutline,
+        mdiAngular,
         mdiDocker,
         mdiEmailOutline,
         mdiGit,
@@ -22,7 +23,7 @@
         {
             icon: mdiEmailOutline,
             text: 'sb.sys.dev@gmail.com',
-            redirect: 'mail://sb.sys.dev@gmail.com',
+            redirect: 'mailto:sb.sys.dev@gmail.com',
         },
         {
             icon: mdiWhatsapp,
@@ -44,15 +45,15 @@
     const softSkills: SideArticleListItem[] = [
         {
             icon: mdiHeadCogOutline,
-            text: 'Critical thinking',
+            text: 'Pensamiento crítico',
         },
         {
             icon: mdiAccountGroupOutline,
-            text: 'Teamwork',
+            text: 'Trabajo en equipo',
         },
         {
             icon: mdiAccountTieVoiceOutline,
-            text: 'Assertive communication',
+            text: 'Comunicación asertiva',
         },
         {
             icon: '',
@@ -69,6 +70,11 @@
                     icon: mdiReact,
                     text: 'React.js',
                     percentage: 95,
+                },
+                {
+                    icon: mdiAngular,
+                    text: 'Angular',
+                    percentage: 25,
                 },
                 {
                     icon: '',
@@ -90,7 +96,7 @@
                     icon: '',
                     img: '/imgs/flutter.svg',
                     text: 'Flutter',
-                    percentage: 30,
+                    percentage: 40,
                 },
             ],
         },
@@ -105,7 +111,13 @@
                 {
                     icon: mdiLanguageGo,
                     text: 'Golang',
-                    percentage: 20,
+                    percentage: 40,
+                },
+                {
+                    icon: '',
+                    img: '/imgs/postgresql.svg',
+                    text: 'PostgreSQL',
+                    percentage: 70,
                 },
             ],
         },
@@ -120,12 +132,12 @@
                 {
                     icon: mdiGit,
                     text: 'Git(hub|lab)',
-                    percentage: 60,
+                    percentage: 75,
                 },
                 {
                     icon: mdiDocker,
                     text: 'Docker compose',
-                    percentage: 50,
+                    percentage: 80,
                 },
             ],
         },
@@ -137,15 +149,15 @@
 
     <ul class="articles">
         <li>
-            <SideArticle title="Contacts" type="list" list={contacts} />
+            <SideArticle title="Contactos" type="list" list={contacts} />
         </li>
 
         <li>
-            <SideArticle title="Soft skills" type="list" list={softSkills} />
+            <SideArticle title="Habilidades blandas" type="list" list={softSkills} />
         </li>
 
         <li>
-            <SideArticle title="Technical skills" type="graph" graphs={technicalSkills} />
+            <SideArticle title="Habilidades técnicas" type="graph" graphs={technicalSkills} />
         </li>
     </ul>
 </div>
@@ -156,7 +168,7 @@
     .side {
         @include bg-color(l30);
         @include flex;
-        @include gap(all 2xl);
+        @include gap(all md);
         @include padding(x md, y lg);
         overflow: hidden;
     }
@@ -169,7 +181,7 @@
 
     .articles {
         @include flex;
-        @include gap(all lg);
+        @include gap(all md);
 
         & > li {
             @include flex;
